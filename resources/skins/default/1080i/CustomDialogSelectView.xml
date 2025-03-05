@@ -1,0 +1,281 @@
+﻿<window>
+    <coordinates>
+        <system>1</system>
+        <posx>240</posx>
+        <posy>20</posy>
+    </coordinates>
+    <include>dialogeffect</include>
+    <controls>
+        <control type="group">
+            <animation effect="fade" time="250">WindowOpen</animation>
+            <animation effect="fade" time="250">WindowClose</animation> 
+            <control type="image">
+                <description>background texture</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>390</width>
+                <height>820</height>
+                <texture border="40">DialogBack.png</texture>
+            </control>
+            <control type="image">
+                <description>Dialog Header texture</description>
+                <posx>40</posx>
+                <posy>16</posy>
+                <width>380</width>
+                <height>40</height>
+                <texture>dialogheader.png</texture>
+            </control>
+            <control type="label" id="1">
+                <description>header label</description>
+                <posx>40</posx>
+                <posy>20</posy>
+                <width>310</width>
+                <height>30</height>
+                <font>font13_title</font>
+                <label>Choose A View</label>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>selected</textcolor>
+                <shadowcolor>black</shadowcolor>
+            </control>
+            <control type="button" id="2">
+                <description>Close Window button</description>
+                <posx>315</posx>
+                <posy>15</posy>
+                <width>64</width>
+                <height>32</height>
+                <label></label>
+                <font>-</font>
+                <onclick>PreviousMenu</onclick>
+                <texturefocus>DialogCloseButton-focus.png</texturefocus>
+                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <onleft>10</onleft>
+                <onright>10</onright>
+                <onup>10</onup>
+                <ondown>10</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="label" id="3">
+                <description>Search result value (e.g. Actor Name), value is set by code</description>
+                <posx>40</posx>
+                <posy>60</posy>
+                <width>420</width>
+                <height>30</height>
+                <font>font13_title</font>
+                
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+            </control>
+
+         
+        
+        
+			<control type="image">
+				<description>Offset</description>
+				<posx>50</posx>
+				<posy>300</posy>
+				<width>300</width>
+                
+				<texture>$INFO[Container(4).Listitem(0).Thumb]</texture>
+				<aspectratio>keep</aspectratio>
+					
+				</control>        
+        
+        
+            <control type="list" id="4">
+                <description>inner movie list (not whole pop-up)</description>
+                <posx>50</posx>
+                <posy>100</posy>
+                <width>400</width>
+                <height>500</height>
+                <onup>4</onup>
+                <onleft>30</onleft>
+                <onright>60</onright>
+                <ondown>4</ondown>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>200</scrolltime>
+                
+                
+                
+                
+                <content>
+					<item id="3">
+					  <label>Poster Thumbnail</label>
+					  <icon>500.jpg</icon>
+					  <thumb>500.jpg</thumb>
+					  <onclick>Container.SetViewMode(500)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+					
+					<item id="1">
+					  <label>List</label>
+					  <icon>50.jpg</icon>
+					  <thumb>50.jpg</thumb>
+					  <onclick>Container.SetViewMode(50)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+					<item id="2">
+					  <label>Big List</label>
+					  <icon>51.jpg</icon>
+					  <thumb>51.jpg</thumb>
+					  <onclick>Container.SetViewMode(51)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+					
+					<item id="4">
+					  <label>Poster Wrap</label>
+					  <icon>501.jpg</icon>
+					  <thumb>501.jpg</thumb>
+					  <onclick>Container.SetViewMode(501)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+					<item id="5">
+					  <label>Fanart</label>
+					  <icon>508.jpg</icon>
+					  <thumb>508.jpg</thumb>
+					  <onclick>Container.SetViewMode(508)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+				  <item id="7">
+					  <label>Media Info</label>
+					  <icon>504.jpg</icon>
+					  <thumb>504.jpg</thumb>
+					  <onclick>Container.SetViewMode(504)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+					<item id="6">
+					  <label>Media Info 2</label>
+					  <icon>503.jpg</icon>
+					  <thumb>503.jpg</thumb>
+					  <onclick>Container.SetViewMode(503)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+					<item id="8">
+					  <label>Media Info 3</label>
+					  <icon>515.jpg</icon>
+					  <thumb>515.jpg</thumb>
+					  <onclick>Container.SetViewMode(515)</onclick>
+					  <onclick>PreviousMenu</onclick>
+					  <visible>true</visible>
+					</item>
+				</content>
+				<itemlayout height="60" width="350">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>300</width>
+						<height>60</height>
+						<texture border="5">button-nofocus.png</texture>
+					</control>
+					<control type="label">
+						<description>not selected, not focused</description>
+						<left>2</left>
+						<top>2</top>
+						<width>300</width>
+						<height>60</height>
+						<font>font13</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<!--<onclick>PreviousMenu</onclick>-->
+						<visible>!String.IsEqual(ListItem.Label,Container.Viewmode)</visible>
+					</control>
+					<control type="label">
+						<description>selected, not focused</description>
+						<left>2</left>
+						<top>2</top>
+						<width>300</width>
+						<height>60</height>
+						<font>font13</font>
+						<textcolor>orange</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<!--<onclick>PreviousMenu</onclick>-->
+						<visible>String.IsEqual(ListItem.Label,Container.Viewmode)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60" width="350">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>300</width>
+						<height>60</height>
+						<texture border="5">button-nofocus.png</texture>
+						<visible>!Control.HasFocus(4)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>300</width>
+						<height>60</height>
+						<texture border="5">button-focus2.png</texture>
+						<visible>Control.HasFocus(4)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="label">
+						<description>not selected, focused</description>
+						<left>2</left>
+						<top>2</top>
+						<width>300</width>
+						<height>60</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!String.IsEqual(ListItem.Label,Container.Viewmode)</visible>
+					</control>
+					<control type="label">
+						<description>selected, focused</description>
+						<left>2</left>
+						<top>2</top>
+						<width>300</width>
+						<height>60</height>
+						<font>font13</font>
+						<textcolor>orange</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>String.IsEqual(ListItem.Label,Container.Viewmode)</visible>
+					</control>	
+				</focusedlayout>
+			</control>
+                     
+                    
+                    
+            <control type="scrollbar" id="60">
+                <posx>380</posx>
+                <posy>100</posy>
+                <width>25</width>
+                <height>495</height>
+                <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <onleft>4</onleft>
+                <onright>30</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+				<visible>false</visible>
+            </control>
+            
+        </control>
+     </controls>
+</window>
